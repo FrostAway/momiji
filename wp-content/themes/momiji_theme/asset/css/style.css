@@ -1,0 +1,918 @@
+/* init */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "UTM Daxline";
+  font-size: 14px;
+  background: #f4e7d7;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+img {
+  cursor: pointer;
+}
+.bg-white {
+  background: #fff;
+}
+.padding-10-21 {
+  padding: 10px 21px;
+}
+.box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+.clear {
+  clear: both;
+}
+/* header */
+#header {
+  background: #fff;
+  background: url(../source/header/hoatiet-06.jpg) repeat;
+  width: 100%;
+  height: 187px;
+}
+#header #logo {
+  margin-left: 195px;
+  margin-top: 28px;
+  float: left;
+}
+#header #logo-more {
+  float: right;
+  margin-bottom: -4px;
+}
+#header-menu {
+  height: 50px;
+  width: 100%;
+  background: url(../source/thanh-menu/menubar-08.jpg);
+}
+#header-menu ul {
+  width: 996px;
+  margin: auto;
+}
+#header-menu ul li {
+  position: relative;
+  float: left;
+  padding: 16px 0px;
+}
+#header-menu ul li a {
+  border-right: 1px solid #007193;
+  display: inline;
+  font-size: 14px;
+  padding: 11px 20px;
+}
+#header-menu ul li:hover {
+  background: #007193;
+}
+#header-menu ul li ul {
+  display: none;
+  position: absolute;
+  top: 49px;
+  left: 0;
+  width: 185px;
+}
+#header-menu ul li ul li {
+  padding: 0px 20px;
+  width: 145px;
+  z-index: 999;
+  background: #007193;
+}
+#header-menu ul li ul li:last-child {
+  border: none;
+}
+#header-menu ul li ul li:hover {
+  background: #2f8cab;
+}
+#header-menu ul li ul li a {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccffff;
+  border-right: none;
+}
+#header-menu ul li ul li:last-child a {
+  border: none;
+}
+#header-menu ul li:hover ul {
+  display: block;
+}
+#header-menu ul li:last-child {
+  border: none;
+}
+#header-menu ul li:last-child a {
+  border: none;
+}
+#header-menu .search-box {
+  margin-right: 167px;
+}
+.search-box {
+  float: right;
+  height: 29px;
+  width: 194px;
+  margin-top: 10px;
+  background: url(../source/thanh-menu/o-tim-kiem-15.png) no-repeat;
+}
+.search-box input[type="text"] {
+  margin: 6px 0 0 10px;
+  width: 145px;
+  border: none;
+  font-family: "UTM Daxline";
+  font-size: 13px;
+}
+.search-box .btn-search {
+  width: 21px;
+  height: 21px;
+  background: url(../source/thanh-menu/kinh-lup-truoc-16.png) no-repeat;
+  float: right;
+  margin: 4px 7px 0 0;
+  border: none;
+  cursor: pointer;
+}
+/* main */
+#main {
+  width: 996px;
+  margin: auto;
+}
+/* slide */
+#box-slide {
+  width: 996px;
+  margin: auto;
+}
+#box-slide #slide {
+  background: url(../source/slide/blurgle-oop157aa.gif) no-repeat;
+  margin-top: 3.5px;
+  width: 750px;
+  position: relative;
+  overflow: hidden;
+  height: 328px;
+  float: left;
+}
+#box-slide #slide ul {
+  width: 1650px;
+}
+#box-slide #slide ul li img {
+  width: 750px;
+  height: 328px;
+}
+#box-slide #slide .prev,
+#box-slide #slide .next {
+  opacity: 0.7;
+}
+#box-slide #slide .prev:hover,
+#box-slide #slide .next:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+#box-slide #slide .prev {
+  position: absolute;
+  top: 132px;
+  left: 20px;
+}
+#box-slide #slide .next {
+  position: absolute;
+  top: 132px;
+  right: 20px;
+}
+#box-slide #slide .items {
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 15px;
+  left: 335px;
+}
+#box-slide #slide .items li {
+  float: left;
+  padding: 3px;
+}
+#box-slide #slide .items li img {
+  height: 13px;
+  width: 13px !important;
+}
+#box-slide #slide-bar {
+  width: 240px;
+  float: right;
+}
+#box-slide #slide-bar ul li {
+  width: 240px;
+  height: 62px;
+  margin: 3.5px 0 4px 0;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#box-slide #slide-bar ul li a {
+  display: block;
+  padding: 6px 25px 0 0;
+  text-transform: uppercase;
+  font-family: "UTM Bebas";
+  font-size: 29px;
+}
+#box-slide #slide-bar ul li:hover {
+  border: 2px solid #fe2e05;
+}
+#box-slide #slide-bar ul .slide1 {
+  background: url(../source/slide/anh-slide-10.jpg) no-repeat;
+}
+#box-slide #slide-bar ul .slide2 {
+  background: url(../source/slide/anh-slide-11.jpg) no-repeat;
+}
+#box-slide #slide-bar ul .slide3 {
+  background: url(../source/slide/anh-slide-12.jpg) no-repeat;
+}
+#box-slide #slide-bar ul .slide4 {
+  background: url(../source/slide/anh-slide-13.jpg) no-repeat;
+}
+#box-slide #slide-bar ul .slide5 {
+  background: url(../source/slide/anh-slide-14.jpg) no-repeat;
+}
+.item-hover {
+  border: 2px solid #fe2e05;
+}
+/*box main*/
+h3.box-title {
+  text-transform: uppercase;
+  font-family: "Segoe UI";
+  font-size: 13px;
+  color: #2f8cab;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #cccccc;
+}
+h4.content-title {
+  font-family: "Segoe UI Semibold";
+  font-size: 13px;
+  color: #000;
+}
+h4.content-title:hover {
+  color: #2f8cab;
+}
+#main-content {
+  float: left;
+  width: 750px;
+}
+.list-box .box {
+  background: #fff;
+  margin: 20px 35px 0 0;
+  float: left;
+  width: 349px;
+  box-sizing: border-box;
+  padding: 15px 13px 15px 7px;
+  position: relative;
+}
+.list-box .box:nth-child(2n) {
+  margin-right: 17px;
+}
+.list-box .box .bar {
+  position: absolute;
+  top: 0;
+  left: -17px;
+  z-index: 1000000;
+  background: url(../source/body/otiengnhat-17.png) no-repeat;
+  width: 17px;
+  height: 100%;
+  transition: width 1s, background 1s, left 1s;
+  -moz-transition: width 1s, background 1s, left 1s;
+  -webkit-transition: width 1s, background 1s, left 1s;
+  -o-transition: width 1s, background 1s, left 1s;
+}
+.list-box .box:hover .bar {
+  width: 50px;
+  background: url(../source/body/aaa.png) no-repeat;
+  left: -50px;
+}
+.list-box .box .box-main .above {
+  margin-left: 22px;
+}
+.list-box .box .box-main .box-post {
+  margin-top: 15px;
+}
+.list-box .box .box-main .box-post .thubnail {
+  width: 107px;
+  float: left;
+}
+.list-box .box .box-main .box-post .thubnail:hover {
+  box-shadow: 0 0 7px #000;
+}
+.list-box .box .box-main .box-post .box-content {
+  width: 183px;
+  float: right;
+}
+.list-box .box .box-main .box-post .box-content .time {
+  font-family: "Segoe UI Semibold";
+  font-size: 10px;
+  color: #cccccc;
+}
+.list-box .box .box-main .box-post .box-content p {
+  text-align: justify;
+  margin-top: 7px;
+  margin-bottom: 3px;
+  font-family: "Segoe UI Light";
+  font-size: 12px;
+}
+.list-box .box .box-main .box-post .box-content .read-more a {
+  color: #2f8cab;
+  font-family: "Segoe UI Semibold";
+  font-size: 10px;
+}
+.list-box .box .box-main .box-meta {
+  padding-top: 9px;
+  clear: both;
+}
+.list-box .box .box-main .box-meta ul li {
+  padding: 7px;
+}
+.list-box .box .box-main .box-meta ul li a {
+  color: #000000;
+  font-family: "Segoe UI Semibold";
+  font-size: 11px;
+}
+.list-box .box .box-main .box-meta ul li a:hover {
+  color: #009999;
+}
+.list-box .box .box-main .box-meta ul li img {
+  margin-right: 7px;
+}
+.list-box .box .box-main .more-footer {
+  float: right;
+  font-family: "Segoe UI Semibold";
+  font-size: 13px;
+  font-style: italic;
+  padding: 5px 10px 7px 10px;
+  background: #2f8cab;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+.list-box .box .box-main .more-footer:hover {
+  background: #00cccc;
+}
+/*right bar*/
+#right-bar {
+  float: right;
+  margin-top: 20px;
+  width: 240px;
+  padding: 17px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #2f8cab;
+}
+#right-bar h3.bar-title {
+  font-family: "Segoe UI";
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
+#right-bar .search-form {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+#right-bar .search-form label {
+  color: #fff;
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: italic;
+  padding: 20px 0 4px 0;
+  display: block;
+}
+#right-bar .search-form .form-select {
+  position: relative;
+}
+#right-bar .search-form .form-select .dropdown {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: url(../source/body/mui-ten-xuong-cot-ben-phai-truoc-27.png) no-repeat;
+  height: 33px;
+  width: 45px;
+}
+#right-bar .search-form select {
+  width: 100%;
+  height: 33px;
+  border: none;
+  padding: 8px 10px 10px 10px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Segoe UI Semilight";
+  font-size: 12px;
+  font-style: italic;
+}
+#right-bar .search-form select option {
+  padding: 7px 10px 10px 10px;
+  border: none;
+  background: #fff;
+}
+#right-bar .search-form input[type="submit"] {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: none;
+  background: #fe4902;
+  padding: 3px 7px 4px 7px;
+  margin-top: 30px;
+  font-family: "Segoe UI Semibold";
+  font-size: 13px;
+  color: #fff;
+  font-style: italic;
+  float: right;
+}
+#right-bar .search-form input[type="submit"]:hover {
+  background: #ce3000;
+}
+#right-bar .more-news {
+  clear: both;
+  margin-top: 33px;
+}
+#right-bar .more-news ul li {
+  position: relative;
+  padding: 19.5px 0;
+  vertical-align: middle;
+}
+#right-bar .more-news ul li a {
+  font-family: "Segoe UI Semibold";
+  font-size: 10px;
+  color: #fff;
+}
+#right-bar .more-news ul li .text {
+  position: absolute;
+  top: 29px;
+}
+#right-bar .more-news ul li img {
+  margin-right: 9px;
+}
+#right-bar .bar-post {
+  margin-top: 30px;
+}
+#right-bar .bar-post li.box-main {
+  margin-bottom: 12px;
+}
+#right-bar .bar-post li.box-main .box-content {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 0;
+}
+#right-bar .bar-post li.box-main .box-content p {
+  margin: 15px 0 0;
+  text-align: justify;
+  font-size: 11px;
+}
+#right-bar .bar-post li.box-main .box-content p.text-hide {
+  display: none;
+}
+#right-bar .bar-post li.box-main .view {
+  position: absolute;
+  right: 11px;
+  top: 20px;
+  font-family: "Segoe UI Semilinght";
+  font-size: 9px;
+}
+#right-bar .bar-post li.box-main .box-footer {
+  border-bottom: 1px solid #fff;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  font-family: "Segoe UI";
+  font-size: 9px;
+}
+#right-bar .bar-post li.box-main .box-footer img {
+  margin-right: 10px;
+  margin-left: 5px;
+}
+#news p,
+#single p {
+  font-family: "Segoe UI Light", sans-serif;
+  font-size: 12px;
+}
+#news #main-content,
+#single #main-content {
+  padding: 10px 22px;
+  background: #fff;
+  margin-top: 20px;
+}
+#news #main-content h3.box-title,
+#single #main-content h3.box-title {
+  padding-bottom: 8px;
+  display: inline;
+  padding-right: 30px;
+}
+#news #main-content .intro,
+#single #main-content .intro,
+#news #main-content .key,
+#single #main-content .key {
+  margin-top: 17px;
+  text-align: justify;
+}
+#news #main-content .key,
+#single #main-content .key {
+  font-size: 13px;
+}
+#news #main-content .form-select,
+#single #main-content .form-select {
+  margin-top: 10px;
+  background: url(../source/body/form-select-icon.png) no-repeat;
+  position: relative;
+  height: 23px;
+  width: 109px;
+}
+#news #main-content .form-select select,
+#single #main-content .form-select select {
+  font-family: "Segoe UI Semilight";
+  font-size: 12px;
+  font-style: italic;
+  margin: 2px;
+  border: none;
+  background: #c9e2e9;
+  width: 104px;
+}
+#news #main-content .form-select .dropdown,
+#single #main-content .form-select .dropdown {
+  position: absolute;
+}
+#news .list-box,
+#single .list-box {
+  margin-top: 30px;
+}
+#news .list-box h4.content-title,
+#single .list-box h4.content-title {
+  color: #006666;
+}
+#news .list-box li.box-main,
+#single .list-box li.box-main {
+  position: relative;
+  width: 225px;
+  height: 382px;
+  background: #f4f4f4;
+  overflow: hidden;
+  float: left;
+  margin-right: 13px;
+  margin-bottom: 12px;
+}
+#news .list-box li.box-main .news-thubnail img,
+#single .list-box li.box-main .news-thubnail img {
+  width: 225px;
+}
+#news .list-box li.box-main .box-content,
+#single .list-box li.box-main .box-content {
+  position: absolute;
+  top: 225px;
+  padding: 15px 12px 12px 12px;
+  background: #f4f4f4;
+  transition: top 1s;
+  -moz-transition: top 1s;
+  -webkit-transition: top 1s;
+}
+#news .list-box li.box-main .box-content p,
+#single .list-box li.box-main .box-content p {
+  margin: 15px 0 0;
+  text-align: justify;
+  font-size: 11px;
+}
+#news .list-box li.box-main .box-content p.text-hide,
+#single .list-box li.box-main .box-content p.text-hide {
+  opacity: 0;
+  transition: opacity 3s;
+  -moz-transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+}
+#news .list-box li.box-main:hover .box-content,
+#single .list-box li.box-main:hover .box-content {
+  top: 60px;
+}
+#news .list-box li.box-main:hover .box-content .text-hide,
+#single .list-box li.box-main:hover .box-content .text-hide {
+  opacity: 1;
+  display: block;
+}
+#news .list-box li.box-main .view,
+#single .list-box li.box-main .view {
+  position: absolute;
+  right: 11px;
+  top: 20px;
+  font-family: "Segoe UI Semilinght";
+  font-size: 9px;
+}
+#news .list-box li.box-main .box-footer,
+#single .list-box li.box-main .box-footer {
+  position: absolute;
+  bottom: 0px;
+  background: #f4f4f4;
+  width: 90%;
+  border-top: 1px solid #cccccc;
+  display: block;
+  margin: 0px 10px;
+  padding: 12px 0;
+  font-family: "Segoe UI";
+  font-size: 9px;
+}
+#news .list-box li.box-main .box-footer img,
+#single .list-box li.box-main .box-footer img {
+  margin-right: 10px;
+  margin-left: 5px;
+}
+#news .list-box li.box-main:nth-child(3n),
+#single .list-box li.box-main:nth-child(3n) {
+  margin-right: 0;
+}
+#news #right-bar,
+#single #right-bar {
+  padding: 20px;
+  color: #fff;
+}
+#news #right-bar p,
+#single #right-bar p {
+  font-family: "Segoe UI Light", sans-serif;
+  font-size: 11px;
+}
+#news #right-bar h4.content-title,
+#single #right-bar h4.content-title {
+  color: #fff;
+}
+#news .pagination,
+#single .pagination {
+  margin-top: 13px;
+}
+#news .pagination .page-next,
+#single .pagination .page-next,
+#news .pagination .page-prev,
+#single .pagination .page-prev {
+  float: left;
+}
+#news .pagination .page-bar,
+#single .pagination .page-bar {
+  float: left;
+  background: url(../source/body/bar-page.png) repeat-x;
+  width: 582px;
+  height: 35px;
+  margin: 0px 4px 0;
+}
+#news .pagination .list-page,
+#single .pagination .list-page {
+  width: 185px;
+  margin: auto;
+}
+#news .pagination .list-page li,
+#single .pagination .list-page li {
+  float: left;
+  margin: 6px 5px;
+}
+#news .pagination .list-page li:last-child,
+#single .pagination .list-page li:last-child {
+  margin-right: 0px;
+}
+#single #main-content .post-bar {
+  float: left;
+  width: 227px;
+}
+#single #main-content .post-bar .post-thumbnail {
+  margin-bottom: 32px;
+  margin-top: 30px;
+}
+#single #main-content .post-bar .bar-author h4 {
+  padding-bottom: 14px;
+}
+#single #main-content .post-bar .bar-author .author-name {
+  text-transform: uppercase;
+}
+#single #main-content .post-bar .bar-author .author-info .avatar {
+  width: 74px;
+  float: left;
+}
+#single #main-content .post-bar .bar-author .author-info .info {
+  width: 133px;
+  float: right;
+  font-family: "Segoe UI Semilight";
+  font-size: 12px;
+}
+#single #main-content .post-content {
+  margin-top: 29px;
+  width: 451px;
+  float: right;
+}
+#single #main-content .post-content h4.box-content {
+  color: #006666;
+  padding: 0 100px 5px 0;
+  display: inline;
+  border-bottom: 1px solid #cccccc;
+}
+#single #main-content .post-content .post-meta {
+  margin: 20px 0;
+}
+#single #main-content .post-content .post-meta img {
+  margin-right: 10px;
+}
+#single #main-content .post-content .excerpt {
+  font-family: "Segoe UI";
+  font-size: 12px;
+}
+#single #main-content .post-content p {
+  margin-bottom: 23px;
+  font-family: "Segoe UI Semilight";
+  font-size: 12px;
+  text-align: justify;
+}
+#single #main-content .more-post {
+  margin-bottom: 12px;
+}
+#single #main-content .more-post a {
+  font-family: "Segoe UI";
+  font-size: 12px;
+  color: #00cccc;
+}
+#single #main-content .more-post a:hover {
+  color: #009999;
+}
+#banner {
+  margin-top: 20px;
+}
+#banner img {
+  width: 996px;
+}
+/*about service*/
+#about-service {
+  margin-top: 20px;
+}
+#about-service h3 {
+  display: block;
+  padding: 13px;
+  font-family: "Segoe UI";
+  font-size: 13px;
+  color: #fff;
+}
+#about-service .first-col {
+  float: left;
+  width: 300px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url(../source/under-banner/o-aboutme-35.jpg) no-repeat;
+}
+#about-service .first-col ul {
+  padding: 20px;
+}
+#about-service .first-col ul li {
+  padding: 10px;
+  position: relative;
+}
+#about-service .first-col ul li img {
+  margin-right: 20px;
+  cursor: pointer;
+}
+#about-service .first-col ul li a {
+  font-family: "Segoe UI";
+  font-size: 17px;
+  color: #000;
+  position: absolute;
+  top: 10px;
+}
+#about-service .first-col ul li a:hover {
+  color: #00cccc;
+}
+#about-service .second-col {
+  float: right;
+  width: 675px;
+  background: #fff;
+}
+#about-service .second-col .bg-col {
+  background: url(../source/under-banner/o-aboutme-36.jpg) no-repeat;
+}
+#about-service .second-col ul .ft-box {
+  width: 332px;
+  float: left;
+  padding: 12px 20px 10px 20px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+#about-service .second-col ul .ft-box .ft-icon {
+  float: left;
+}
+#about-service .second-col ul .ft-box .ft-icon img {
+  margin: 5px 0 30px 20px;
+}
+#about-service .second-col ul .ft-box .ft-content {
+  float: right;
+  width: 200px;
+}
+#about-service .second-col ul .ft-box .ft-content h3 {
+  padding: 5px 0;
+  color: #000;
+}
+#about-service .second-col ul .ft-box .ft-content h3:hover {
+  color: #00cccc;
+}
+#about-service .second-col ul .ft-box .ft-content p {
+  font-family: "Segoe UI Light";
+  font-size: 11px;
+  text-align: justify;
+}
+/*footer*/
+#footer {
+  margin-top: 27px;
+  width: 100%;
+  background: #2f8cab;
+}
+#footer .ft-first-row ul li {
+  float: left;
+}
+#footer .ft-first-row ul li h2 {
+  width: 218px;
+  padding: 30px 50px 30px 190px;
+  margin: 20px 0;
+  font-family: "Segoe UI";
+  font-size: 23px;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+#footer .ft-first-row ul .customer {
+  width: 335px;
+  padding: 35px 0 0 27px;
+}
+#footer .ft-first-row ul .customer .c-avatar {
+  float: left;
+}
+#footer .ft-first-row ul .customer .c-avatar img {
+  transition: top .5s;
+  -moz-transition: top .5s;
+  -webkit-transition: top .5s;
+  -o-transition: top .5s;
+  transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+#footer .ft-first-row ul .customer .c-avatar:hover img {
+  top: 20px;
+  transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -webkit-transform: rotateY(360deg);
+  transition: 2s;
+  -moz-transition: 2s;
+  -webkit-transition: 2s;
+}
+#footer .ft-first-row ul .customer .c-say {
+  float: right;
+  width: 220px;
+  color: #fff;
+}
+#footer .ft-first-row ul .customer .c-say p {
+  text-align: justify;
+  padding-right: 20px;
+  font-family: "Segoe UI Italic";
+  font-style: italic;
+  font-size: 10px;
+}
+#footer .ft-second-row {
+  clear: both;
+  border-top: 2px solid #fff;
+  padding: 36px;
+  width: 973px;
+  margin: auto;
+}
+#footer .ft-second-row ul .ft-link {
+  width: 33%;
+  float: left;
+  color: #fff;
+}
+#footer .ft-second-row ul .ft-link h3 {
+  font-size: 18px;
+}
+#footer .ft-second-row ul .ft-link .search-box {
+  float: left;
+}
+#footer .ft-second-row ul .contact {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 60px;
+}
+#footer .ft-second-row ul .contact ul li {
+  padding-top: 15px;
+}
+#footer .ft-second-row ul .social {
+  padding-left: 150px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#footer .ft-second-row ul .social ul {
+  margin-top: 20px;
+}
+#footer .ft-second-row ul .social ul li {
+  float: left;
+  width: 33px;
+  padding: 9px 15px 9px 0;
+}
+#footer .copy-right {
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+  padding-bottom: 15px;
+}
