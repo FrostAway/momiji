@@ -107,9 +107,9 @@ function getPostViews($postID){
     if($count==''){
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
-        return '0 View';
+        return '0';
     }
-    return $count.' Views';
+    return $count;
 }
  
 // function to count views.

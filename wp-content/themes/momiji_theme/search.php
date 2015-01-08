@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="box-content">
                                         <h4 class="content-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-                                        <div class="view"><img src="<?php echo bloginfo('template_directory') ?>/asset/source/body/icon-59.png" /> 1596</div>
+                                        <div class="view"><img src="<?php echo bloginfo('template_directory') ?>/asset/source/body/icon-59.png" /> <?php echo getPostViews(get_the_ID()) ?></div>
                                         <?php the_excerpt() ?>
                                         <div class="text-hide">
                                             <?php echo apply_filters('the_content', substr(get_the_content(), 0, 600)) ?>

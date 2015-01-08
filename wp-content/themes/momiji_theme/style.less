@@ -3,8 +3,13 @@
 *{
     margin: 0; padding: 0;
 }
+@font-face{
+    font-family: utm;
+    src: url('asset/source/font/UTM Dax.ttf'),
+        url('asset/source/font/UTM Bebas.ttf');
+}
 body{
-    font-family: "UTM Daxline";
+    font-family: utm;
     font-size: 14px;
     background: #f4e7d7;
 }
@@ -117,7 +122,7 @@ img{
     input[type="text"]{
         margin: 6px 0 0 10px;
         width: 145px; border: none;
-        font-family: "UTM Daxline"; font-size: 13px;
+        font-family: utm; font-size: 13px;
     }
     .btn-search{
         width: 21px; height: 21px;
@@ -270,7 +275,9 @@ h4.content-title, h4.content-title a{
                     width: 107px;
                     float: left;
                     &:hover{
-                        box-shadow: 0 0 7px #000;
+                        box-shadow: 0 0 3px #000;
+                        -webkit-box-shadow: 0 0 3px;
+                        -o-box-shadow: 0 0 3px;
                     }
                     img{width: 107px; height: 100px;}
                 }
@@ -511,10 +518,10 @@ h4.content-title, h4.content-title a{
         .list-page{
             
             span.current{
-                padding: 5px 10px; background: #00ccff; color: #006666;
+                padding: 5px 10px; background: #fff; color: #0000ff;
             }
             a.page-numbers{
-                padding: 5px 10px; background: #009999; color: #fff;
+                padding: 5px 10px; background: #ccccc; color: #000;
             }
         }
     }
