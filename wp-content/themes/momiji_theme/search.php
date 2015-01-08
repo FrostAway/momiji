@@ -62,33 +62,20 @@
 
                         <div class="clear"></div>
                         <?php if($paged >= 1){ ?>
-                        <div class="pagination">
-                            <?php
-                            if (get_previous_posts_link()) {
-                                previous_posts_link('<img src="' . get_template_directory_uri() . '/asset/source/body/prev-icon.png"  />');
-                            } else {
-                                ?>
-                                <a class="page-next"><img src="<?php echo get_template_directory_uri() ?>/asset/source/body/prev-icon.png"  /></a>
-                                    <?php } ?>                   
+                        <?php if($paged >= 1){ ?>
+                        <div class="pagination">                 
                             <div class="page-bar">
                                 <ul class="list-page">
-                                    <?php
-                                    $big = 99999999;
-                                    echo paginate_links(array(
-                                        'prev_next' => false,
-                                        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-                                    ));
-                                    ?>
+                                <?php 
+                                $big = 99999999;
+                                echo paginate_links(array(
+                                    'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                                ));
+                                ?>
                                 </ul>
                             </div>
-                            <?php
-                            if (get_next_posts_link()) {
-                                next_posts_link('<img src="' . get_template_directory_uri() . '/asset/source/body/icon-next.png"  />');
-                            } else {
-                                ?>
-                                <a class="page-next"><img src="<?php echo get_template_directory_uri() ?>/asset/source/body/icon-next.png"  /></a>
-                        <?php } ?>
                         </div>
+                        <?php } ?>
                         <?php } ?>
 
             <?php else: ?>

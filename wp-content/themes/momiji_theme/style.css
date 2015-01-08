@@ -253,9 +253,7 @@ h3.box-title a {
   font-size: 16px;
   color: #2f8cab;
   padding-bottom: 6px;
-  border-bottom: 1px solid #cccccc;
   display: inline;
-  padding-right: 17px;
 }
 h4.content-title,
 h4.content-title a {
@@ -266,6 +264,11 @@ h4.content-title a {
 h4.content-title:hover,
 h4.content-title a:hover {
   color: #2f8cab;
+}
+.line {
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  width: 225px;
 }
 #main-content {
   float: left;
@@ -474,6 +477,10 @@ h4.content-title a:hover {
 }
 #right-bar .bar-post li.box-main {
   margin-bottom: 12px;
+}
+#right-bar .bar-post li.box-main .news-thubnail img {
+  height: 200px;
+  width: 200px;
 }
 #right-bar .bar-post li.box-main .box-content {
   position: relative;
@@ -736,7 +743,7 @@ h4.content-title a:hover {
 }
 #single #main-content .post-content .excerpt {
   font-family: "Segoe UI";
-  font-size: 12px;
+  font-size: 14px;
 }
 #single #main-content .post-content p {
   margin-bottom: 23px;

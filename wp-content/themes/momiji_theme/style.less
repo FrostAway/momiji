@@ -222,11 +222,14 @@ h3.box-title, h3.box-title a{
     text-transform: uppercase;
     font-family: "Segoe UI"; font-size: 16px;
     color: #2f8cab; padding-bottom: 6px;
-    border-bottom: 1px solid #cccccc; display: inline; padding-right: 17px;
+    display: inline;
 }
 h4.content-title, h4.content-title a{
     font-family: "Segoe UI Semibold"; font-size: 15px; color: #000;
     &:hover{color: #2f8cab;}
+}
+.line{
+    border-bottom: 1px solid #cccccc; padding: 4px 0; width: 225px;
 }
 
 #main-content{
@@ -393,7 +396,8 @@ h4.content-title, h4.content-title a{
         margin-top: 30px;
         li.box-main{
             margin-bottom: 12px;
-            .news-thubnail{               
+            .news-thubnail{
+                img{height: 200px; width: 200px;}
             }
             .box-content{
                 position: relative; overflow: hidden;
@@ -555,7 +559,7 @@ h4.content-title, h4.content-title a{
                 img{margin-right: 10px;}
             }
             .excerpt{
-                font-family: "Segoe UI"; font-size: 12px;
+                font-family: "Segoe UI"; font-size: 14px;
             }
             p{margin-bottom: 23px;  font-family: "Segoe UI"; font-size: 13px; text-align: justify;}
         }

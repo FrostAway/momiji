@@ -1,35 +1,29 @@
 <div id="right-bar">
     <h3 class="bar-title">Bài viết nổi bật</h3>
     <?php
-    
+    $query = array(
+        'meta_key' => 'post_views_count',
+        'posts_per_page' => 2,
+    );
+    query_posts($query);
     ?>
     <ul class="bar-post">
+        <?php while(have_posts()): the_post() ?>
         <li class="box-main">
             <div class="news-thubnail">
-                <a href=""><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/anh-ben-phai-63.jpg" /></a>
+                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(200, 200) ?></a>
             </div>
             <div class="box-content">
-                <a href="#"><h4 class="content-title">Tư vấn du học</h4></a>
+                <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title(); ?></h4></a>
                 <div class="view"> </div>
-                <p>Khó khăn lớn nhất phải kể đến đối với du học Nhật Bản, một nơi đắt đỏ nhất thế giới là chi phí cao. Khó khăn lớn nhất phải kể đến đối với du học Nhật Bản. </p>
+                <p><?php echo my_excerpt(30) ?></p>
             </div>
             <div class="box-footer">
-                 24 tháng 12 2012
+                 <?php the_time('F j, Y') ?>
             </div>
         </li>
-        <li class="box-main">
-            <div class="news-thubnail">
-                <a href=""><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/anh-ben-phai-63.jpg" /></a>
-            </div>
-            <div class="box-content">
-                <a href="#"><h4 class="content-title">Tư vấn du học</h4></a>
-                <div class="view"> </div>
-                <p>Khó khăn lớn nhất phải kể đến đối với du học Nhật Bản, một nơi đắt đỏ nhất thế giới là chi phí cao. Khó khăn lớn nhất phải kể đến đối với du học Nhật Bản. </p>
-            </div>
-            <div class="box-footer">
-                 24 tháng 12 2012
-            </div>
-        </li>
+        <?php endwhile; ?>
+        
     </ul>
 
     <div class="more-news">

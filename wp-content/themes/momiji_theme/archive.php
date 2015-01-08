@@ -4,10 +4,8 @@
 <div id="news">
     <div id="main"> 
         <div id="content">
-            <div id="main-content" class="box-sizing">
-                
+            <div id="main-content" class="box-sizing">              
                 <?php if (have_posts()) : ?>
-
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 			<?php /* If this is a category archive */ if (is_category()) { ?>
@@ -32,13 +30,14 @@
 				<h3 class="box-title">Blog Archives</h3>
 			
 			<?php } ?>
-                               
-                <?php 
-             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-             $args = array('posts_per_page' => 3, 'paged' => $paged , 'cat' => $cat);
-             query_posts($args); 
-
-             ?>          
+                                
+                        <div class="line"></div>   
+                                
+                    <?php 
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array('posts_per_page' => 3, 'paged' => $paged , 'cat' => $cat);
+                        query_posts($args); 
+                    ?>          
                 <p class="intro">
                     Cập nhật các thông tin mới nhất và mọi mặt về hệ thống giáo dục quốc tế và đời sống du học sinh Việt ở nước ngoài cũng như những tính năng mới nhất được phát triển trên hệ thống mạng lưới Hotcourses quốc tế trong đó có Hotcourses Việt Nam. Bạn chắc chắn sẽ không muốn bỏ lỡ những tin tức mới nhất về chính sách thị thực, các bài phỏng vấn với các chuyên gia giáo dục quốc tế, các bảng xếp hạng mới được xuất bản hay những cuộc thi, hội chợ của du học sinh Việt ở nước ngoài.
                 </p>

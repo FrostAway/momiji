@@ -1,11 +1,13 @@
 <?php get_header() ?>
+<?php setPostViews(get_the_ID()) ?>
 
 <div id="single">
     <div id="main"> 
         <div id="content">
             
             <div id="main-content" class="box-sizing">
-                <h3 class="box-title">Tin tức - thông tin thị trường</h3>
+                <h3 class="box-title">Tin Tức</h3>
+                <div class="line"></div>
                 <div class="clear"></div>
                 <div class="post-bar">
                     <div class="post-thumbnail">
