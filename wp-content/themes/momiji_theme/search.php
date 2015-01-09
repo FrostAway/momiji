@@ -53,9 +53,9 @@
                                         <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("medium"); ?></a>
                                     </div>
                                     <div class="box-content">
-                                        <h4 class="content-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+                                        <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title() ?></h4></a>
                                         <div class="view"><img src="<?php echo bloginfo('template_directory') ?>/asset/source/body/icon-59.png" /> <?php echo getPostViews(get_the_ID()) ?></div>
-                                        <?php echo my_excerpt(25); ?>
+                                        <p><?php echo my_excerpt(20); ?></p>
                                         <div class="text-hide">
                                             <?php echo apply_filters('the_content', substr(get_the_content(), 0, 600)) ?>
                                         </div>
