@@ -1,7 +1,14 @@
 <?php
 
 // Add RSS links to <head> section
-automatic_feed_links();
+//automatic_feed_links();
+//hide addmin bar
+
+//add_action('after_setup_theme', function() {
+//    if (!is_admin()) {
+//        show_admin_bar(false);
+//    }
+//});
 
 //post thumbnail
 add_theme_support('post-thumbnails');
@@ -70,7 +77,6 @@ function my_post_queries($query) {
         if (is_search()) {
             $query->set('posts_per_page', 3);
         }
-        
     }
 }
 
@@ -98,44 +104,58 @@ function my_excerpt($limit) {
     return $excerpt;
 }
 
-
 // get and set post view
 
-function getPostViews($postID){
+function getPostViews($postID) {
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
+    if ($count == '') {
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
         return '0';
     }
     return $count;
 }
- 
+
 // function to count views.
 function setPostViews($postID) {
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
+    if ($count == '') {
         $count = 0;
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
-    }else{
+    } else {
         $count++;
         update_post_meta($postID, $count_key, $count);
     }
 }
- 
+
 // Add it to a column in WP-Admin - (Optional)
 add_filter('manage_posts_columns', 'posts_column_views');
-add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
-function posts_column_views($defaults){
+add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
+
+function posts_column_views($defaults) {
     $defaults['post_views'] = __('Views');
     return $defaults;
 }
-function posts_custom_column_views($column_name, $id){
-if($column_name === 'post_views'){
+
+function posts_custom_column_views($column_name, $id) {
+    if ($column_name === 'post_views') {
         echo getPostViews(get_the_ID());
+    }
+}
+
+//send a contact email
+
+if(isset($_POST['contact-submit'])){
+    $contact = $_POST['contact'];
+    
+    if(wp_mail($contact['email'], $contact['subject'], $contact['content'])){
+        echo 'Đã gửi liên hệ của bạn';
+        wp_redirect(home_url()); exit();
+    }else{
+        echo 'Có lỗi xảy ra';
     }
 }
 

@@ -3,6 +3,9 @@
 *{
     margin: 0; padding: 0;
 }
+#wpadminbar{
+    
+}
 @font-face{
     font-family: utm;
     src: url('asset/source/font/UTM Dax.ttf'),
@@ -251,7 +254,7 @@ h4.content-title, h4.content-title a{
         position: relative;
         &:nth-child(2n){margin-right: 17px;}
         .bar{
-            position: absolute; top: 0; left: -17px; z-index: 1000000;
+            position: absolute; top: 0; left: -17px;
             background: url(asset/source/body/otiengnhat-17.png) no-repeat;
             width: 17px; height: 100%;
             transition: width 1s, background 1s, left 1s;
@@ -543,6 +546,12 @@ h4.content-title, h4.content-title a{
                     .avatar{
                         width: 74px;
                         float: left;
+                        img{
+                            border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            -o-border-radius: 50px;
+                        }
                     }
                     .info{
                         width: 133px;
@@ -648,6 +657,25 @@ h4.content-title, h4.content-title a{
     }
 }
 
+//form
+
+.data-form{
+    margin-top: 40px;
+    label{
+        
+    }
+    input[type="text"], input[type="email"]{
+        padding: 8px 15px; width: 300px; 
+    }
+    textarea{
+        min-height: 100px; width: 405px; padding: 10px;
+    }
+    input[type="submit"]{
+        padding: 8px 20px; background: #009999; border: none; cursor: pointer;
+    }
+}
+
+
 /*footer*/
 #footer{
     margin-top: 27px;
@@ -721,6 +749,7 @@ h4.content-title, h4.content-title a{
             .contact{
                 box-sizing: border-box;
                 -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
                 padding-left: 60px;
                 ul{
                     li{
@@ -732,6 +761,7 @@ h4.content-title, h4.content-title a{
                 padding-left: 150px;
                 box-sizing: border-box;
                 -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
                 ul{
                     margin-top: 20px;
                     li{

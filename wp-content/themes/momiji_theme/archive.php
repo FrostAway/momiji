@@ -12,7 +12,7 @@
                          <h3 class="box-title"><?php single_cat_title(); ?></h3>
 
 			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h3 class="box-title"><?php single_tag_title(); ?>&#8217;</h3>
+				<h3 class="box-title"><?php single_tag_title(); ?></h3>
 
 			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
 				<h3 class="box-title"><?php the_time('F jS, Y'); ?></h3>

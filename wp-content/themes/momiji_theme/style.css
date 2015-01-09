@@ -294,7 +294,6 @@ h4.content-title a:hover {
   position: absolute;
   top: 0;
   left: -17px;
-  z-index: 1000000;
   background: url(asset/source/body/otiengnhat-17.png) no-repeat;
   width: 17px;
   height: 100%;
@@ -722,6 +721,12 @@ h4.content-title a:hover {
   width: 74px;
   float: left;
 }
+#single #main-content .post-bar .bar-author .author-info .avatar img {
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+}
 #single #main-content .post-bar .bar-author .author-info .info {
   width: 133px;
   float: right;
@@ -850,6 +855,25 @@ h4.content-title a:hover {
   font-size: 12px;
   text-align: justify;
 }
+.data-form {
+  margin-top: 40px;
+}
+.data-form input[type="text"],
+.data-form input[type="email"] {
+  padding: 8px 15px;
+  width: 300px;
+}
+.data-form textarea {
+  min-height: 100px;
+  width: 405px;
+  padding: 10px;
+}
+.data-form input[type="submit"] {
+  padding: 8px 20px;
+  background: #009999;
+  border: none;
+  cursor: pointer;
+}
 /*footer*/
 #footer {
   margin-top: 27px;
@@ -927,6 +951,7 @@ h4.content-title a:hover {
 #footer .ft-second-row ul .contact {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   padding-left: 60px;
 }
 #footer .ft-second-row ul .contact ul li {
@@ -936,6 +961,7 @@ h4.content-title a:hover {
   padding-left: 150px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 #footer .ft-second-row ul .social ul {
   margin-top: 20px;

@@ -10,18 +10,7 @@
 <div id="news">
     <div id="main"> 
         <div id="content">
-            <div id="main-content" class="box-sizing">
-                <a href=""><h3 class="box-title">Tìm kiếm</h3></a>
-                <p class="key">Từ khóa: "Học bổng" . HIển thị 78 kết quả</p>
-                <p class="key">Sắp xếp theo</p>
-                <div class="form-select">
-                    <select>
-                        <option>Ngày tháng</option>
-                    </select>
-                    <div class="dropdown"></div>
-                </div>
-
-                <?php
+            <?php
                 global $query_string;
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -35,8 +24,26 @@
                 }
                 $search_query['posts_per_page'] = 3;
                 $search_query['post_type'] = 'post';
+                $search_query['orderby'] = 'date';
+                $search_query['order'] = 'desc';
                 query_posts($search_query);
-                ?>            
+                
+                global $wp_query;
+                ?>
+            
+            <div id="main-content" class="box-sizing">
+                <a href=""><h3 class="box-title">Tìm kiếm</h3></a>
+                <p class="key">Từ khóa: "<?php echo get_query_var('s'); ?>" . HIển thị <?php echo $wp_query->found_posts; ?> kết quả</p>
+<!--                <p class="key">Sắp xếp theo</p>
+                <div class="form-select">
+                    <select>
+                        <option>Ngày tháng</option>
+                    </select>
+                    <div class="dropdown"></div>
+                </div>-->
+                <p></p>
+
+                           
                 <ul class="list-box">
 
                     <?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -48,7 +55,7 @@
                                     <div class="box-content">
                                         <h4 class="content-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
                                         <div class="view"><img src="<?php echo bloginfo('template_directory') ?>/asset/source/body/icon-59.png" /> <?php echo getPostViews(get_the_ID()) ?></div>
-                                        <?php the_excerpt() ?>
+                                        <?php echo my_excerpt(25); ?>
                                         <div class="text-hide">
                                             <?php echo apply_filters('the_content', substr(get_the_content(), 0, 600)) ?>
                                         </div>

@@ -4,6 +4,8 @@
     $query = array(
         'meta_key' => 'post_views_count',
         'posts_per_page' => 2,
+        'orderby' => 'meta_value_num post_views_cout',
+        'order' => 'desc'
     );
     query_posts($query);
     ?>
@@ -28,7 +30,27 @@
 
     <div class="more-news">
         <h3 class="bar-title">Từ khóa tìm kiếm hot</h3>
-        <p>u Học, Du Học Anh, Du Học Úc, Du Học New Zealand, Du Học Mỹ, Du Học Canada, Du Học Nhật Bản, Du Học Hàn Quốc, Du Học Singapore, Du Học Trung Quốc, Du Học Ý, Du Học Đức, Du Học Hà Lan, Du Học Ba Lan, Du Học Thụy Sĩ, Du Học Phần Lan, Du Học Tây Ban Nha, Học Bổng Du Học, Tư Vấn Du Học, Kinh Nghiệm Du Học, Du Hoc Anh, Du Học New Ocean</p> 
+        <p>
+            <?php //query_posts(array(
+               
+            //)); ?>
+            
+            <?php //if(have_posts()): while (have_posts()): the_post(); ?>
+            <?php// the_title(); ?>
+            <?php// endwhile; ?>          
+            <?php //else: ?>
+            <!--No thing-->
+            <?php// endif; ?>
+            
+            <?php $args = array(
+                'smallest' => '8',
+                'largest' => '13',
+                'unit' => 'pt',
+                'separator' => ', ',
+                'taxonomy' => 'post_tag'
+            ) ?>
+            <?php wp_tag_cloud($args); ?>
+        </p> 
     </div>
 </div>
 

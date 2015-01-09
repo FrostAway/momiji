@@ -6,17 +6,18 @@
             
             <div id="main-content" class="box-sizing">
                 <h3 class="box-title"><?php the_title(); ?></h3>
+                <div class="line"></div>
                 <div class="clear"></div>
                 <div class="post-bar">
                     <div class="post-thumbnail">
                         <a href=""><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/anh-58.jpg" /></a>
                     </div>
                     <div class="bar-author">
-                        <h4>Tác giả</h4>
-                        <h4 class="author-name">Hoàng Anh</h4>
+                        <h4>Quản lý</h4>
+                        <h4 class="author-name content-title">Momiji</h4>
                         <div class="author-info">
                             <div class="avatar">
-                                <a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/footer/anh-khach-45.png" /></a>
+                                <a href="<?php the_author_link() ?>"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/footer/anh-khach-45.png" /></a>
                             </div>
                             <div class="info">
                                 Biên tập viên, chuyên viên marketing tại 4handy và biên tập viên tại Hotcourses Vietnam. Thích chó mèo và đồ handmade
@@ -26,15 +27,12 @@
                 </div>
                 <div class="post-content">
                     
-                    
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+     
 			
                     <h4 class="box-content"><?php the_title(); ?></h4>
 			
 			<div class="post-meta">
-                            <img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/icon-60.png" /> <span>24 tháng 12 2012</span>
+                            <img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/icon-60.png" /> <span><?php the_time('F j, Y') ?></span>
                         </div>
                         <?php the_excerpt() ?>
 			<div class="post-body">
@@ -42,20 +40,9 @@
                         </div>
 			
 			<?php //edit_post_link('Edit this entry','','.'); ?>
-			<div class="more-post">
-                        <ul>
-                            <li><a href="">>> Học thiết kế thời trang cao cấp ở ModArt Paris</a></li>
-                            <li><a href="">>> Hoc kinh doanh thời trang tại Singapore</a></li>
-                            <li><a href="">>> Học thiết kế thời trang tại thành phố của những trái tim nghệ sĩ, Meibourne</a></li>
-                            <li><a href="">>> Học thời trang ở London. Đi thực tế 2 lần/tuần</a></li>
-                        </ul>
-                        </div>
+			
 		</div>
-
-                    <?php //comments_template(); ?>
-
-                <?php endwhile; endif; ?>
-                    
+  
                 </div>
 
                 <!-- End list - box main -->
