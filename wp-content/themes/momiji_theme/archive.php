@@ -35,11 +35,11 @@
                                 
                     <?php 
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array('posts_per_page' => 3, 'paged' => $paged , 'cat' => $cat);
+                        $args = array('posts_per_page' => 9, 'paged' => $paged , 'cat' => $cat);
                         query_posts($args); 
                     ?>          
                 <p class="intro">
-                    Cập nhật các thông tin mới nhất và mọi mặt về hệ thống giáo dục quốc tế và đời sống du học sinh Việt ở nước ngoài cũng như những tính năng mới nhất được phát triển trên hệ thống mạng lưới Hotcourses quốc tế trong đó có Hotcourses Việt Nam. Bạn chắc chắn sẽ không muốn bỏ lỡ những tin tức mới nhất về chính sách thị thực, các bài phỏng vấn với các chuyên gia giáo dục quốc tế, các bảng xếp hạng mới được xuất bản hay những cuộc thi, hội chợ của du học sinh Việt ở nước ngoài.
+                    <?php echo category_description(get_query_var('cat')) ?>
                 </p>
                 
                 <ul class="list-box">

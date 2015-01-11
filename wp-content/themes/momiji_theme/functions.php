@@ -1,15 +1,12 @@
 <?php
-
 // Add RSS links to <head> section
 //automatic_feed_links();
 //hide addmin bar
-
 //add_action('after_setup_theme', function() {
 //    if (!is_admin()) {
 //        show_admin_bar(false);
 //    }
 //});
-
 //post thumbnail
 add_theme_support('post-thumbnails');
 add_image_size("medium", 225, 225);
@@ -67,15 +64,15 @@ function my_post_queries($query) {
         // alter the query for the home and category pages 
 
         if (is_home()) {
-            $query->set('posts_per_page', 3);
+            $query->set('posts_per_page', 4);
         }
 
         if (is_category()) {
-            $query->set('posts_per_page', 3);
+            $query->set('posts_per_page', 9);
         }
 
         if (is_search()) {
-            $query->set('posts_per_page', 3);
+            $query->set('posts_per_page', 9);
         }
     }
 }
@@ -148,15 +145,190 @@ function posts_custom_column_views($column_name, $id) {
 
 //send a contact email
 
-if(isset($_POST['contact-submit'])){
+if (isset($_POST['contact-submit'])) {
     $contact = $_POST['contact'];
-    
-    if(wp_mail($contact['email'], $contact['subject'], $contact['content'])){
+
+    if (wp_mail($contact['email'], $contact['subject'], $contact['content'])) {
         echo 'Đã gửi liên hệ của bạn';
-        wp_redirect(home_url()); exit();
-    }else{
+        wp_redirect(home_url());
+        exit();
+    } else {
         echo 'Có lỗi xảy ra';
     }
 }
 
-?>
+// theme option
+// theme option
+add_action('admin_menu', function() {
+    add_theme_page('Momiji Theme Option', 'Display Opiton', 'manage_options', 'momiji-them-option', 'home_page_setting');
+    // ten hien thi         hien thi menu     nguoi co quyen    id ten                ham setting
+});
+add_action('admin_init', function() {
+    register_setting('home-page-group', 'home-cat1');
+    register_setting('home-page-group', 'home-cat2');
+    register_setting('home-page-group', 'home-cat3');
+    register_setting('home-page-group', 'home-cat4');
+    // slide
+    
+    register_setting('home-page-group', 'slide-img1');
+    register_setting('home-page-group', 'slide-img2');
+    register_setting('home-page-group', 'slide-img3');
+    register_setting('home-page-group', 'slide-img4');
+    register_setting('home-page-group', 'slide-img5');
+    
+});
+
+function home_page_setting() {
+    $categories = get_categories(array());
+    ?>
+    <div class="wrap">
+        <?php screen_icon(); ?>
+        <h2>Display Option</h2>
+        <form id="home_page_setting" method="post" action="options.php">
+            <?php settings_fields('home-page-group'); ?>
+            <h3>Select Category show in Home page</h3>
+
+            <select name="home-cat1">
+                <?php foreach ($categories as $cat) { ?>
+                    <?php
+                    $select = '';
+                    if ($cat->term_id == get_option('home-cat1'))
+                        $select = 'selected';
+                    ?>
+                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
+                <?php } ?>
+            </select>
+            <select name="home-cat2">
+                <?php foreach ($categories as $cat) { ?>
+                    <?php
+                    $select = '';
+                    if ($cat->term_id == get_option('home-cat2'))
+                        $select = 'selected';
+                    ?>
+                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
+                <?php } ?>
+            </select>
+            <select name="home-cat3">
+                <?php foreach ($categories as $cat) { ?>
+                    <?php
+                    $select = '';
+                    if ($cat->term_id == get_option('home-cat3'))
+                        $select = 'selected';
+                    ?>
+                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
+                <?php } ?>
+            </select>
+            <select name="home-cat4">
+                <?php foreach ($categories as $cat) { ?>
+                    <?php
+                    $select = '';
+                    if ($cat->term_id == get_option('home-cat4'))
+                        $select = 'selected';
+                    ?>
+                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
+                <?php } ?>
+            </select>
+
+            <hr />
+            <h3>Select Image Slide</h3>
+            <div style="margin:10px;">
+                <label style="float:left; margin: 5px 5px 0 0;">Image 1:</label>
+                <input type="text" id="image_1" name="slide-img1" value="<?php echo  get_option('slide-img1') ?>" style="width: 550px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(1)" class="upload_image_button" type="button" value="Upload Image" />
+            </div>
+            <div style="margin:10px;">
+                <label style="float:left; margin: 5px 5px 0 0;">Image 2:</label>
+                <input type="text" id="image_2" name="slide-img2" value="<?php echo  get_option('slide-img2') ?>" style="width: 550px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(2)" class="upload_image_button" type="button" value="Upload Image" />
+            </div>
+            <div style="margin:10px;">
+                <label style="float:left; margin: 5px 5px 0 0;">Image 3:</label>
+                <input type="text" id="image_3" name="slide-img3" value="<?php echo  get_option('slide-img3') ?>" style="width: 550px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(3)" class="upload_image_button" type="button" value="Upload Image" />
+            </div>
+            <div style="margin:10px;">
+                <label style="float:left; margin: 5px 5px 0 0;">Image 4:</label>
+                <input type="text" id="image_4" name="slide-img4" value="<?php echo  get_option('slide-img4') ?>" style="width: 550px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(4)" class="upload_image_button" type="button" value="Upload Image" />
+            </div>
+            <div style="margin:10px;">
+                <label style="float:left; margin: 5px 5px 0 0;">Image 5:</label>
+                <input type="text" id="image_5" name="slide-img5" value="<?php echo  get_option('slide-img5') ?>" style="width: 550px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(5)" class="upload_image_button" type="button" value="Upload Image" />
+            </div>
+
+            <?php add_thickbox(); ?>
+            <script>
+                function upload_image(id){
+                    tb_show('', 'media-upload.php?type=image&TB_iframe=true');
+                   
+                     window.send_to_editor = function (html) {
+                    imgurl = jQuery('img', html).attr('src');
+                    jQuery("#image_"+id).val(imgurl);
+                    tb_remove();
+                };
+            }
+
+            </script>
+
+            <?php submit_button(); ?>
+        </form>
+
+        <?php
+    }
+
+// add custom post 
+    add_action('init', 'reg_product_post_type');
+
+    function reg_product_post_type() {
+        register_post_type('search-option', array(
+            'labels' => array(
+                'name' => 'Tìm kiếm',
+                'singular_name' => 'Tìm kiếm',
+                'add_new' => false,
+                'edit_item' => false,
+                'all_items' => false,
+                'new_item_name' => false,
+                'view_item' => false,
+                'menu_name' => 'Tìm kiếm',
+            ),
+            'public' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'search-option'),
+            'has_archive' => true,
+            'supports' => array(),
+        ));
+
+        register_taxonomy('school-category', 'search-option', array(
+            'labels' => array(
+                'name' => 'Trường ĐH',
+                'singular_name' => 'Trường ĐH',
+                'add_new' => 'Thêm Trường',
+                'new_item_name' => 'Trường mới',
+                'add_new_item' => 'Thêm Trường ĐH'
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => true,
+            'show_admin_column' => true,
+            'rewirte' => array('slug' => 'school'),
+            'query_var' => true,
+        ));
+        register_taxonomy('city-category', array('school-category'), array(
+            'labels' => array(
+                'name' => 'Thành phố',
+                'singular_name' => 'Thành phố',
+                'add_new' => 'Thêm Thành phố',
+                'new_item_name' => 'Thành phố mới',
+                'add_new_item' => 'Thêm thành phố mới'
+            ),
+            'public' => true,
+            'hierarchical' => false,
+            'show_admin_column' => true,
+            'rewirte' => array('slug' => 'city'),
+            'query_var' => true,
+        ));
+    }
+    ?>

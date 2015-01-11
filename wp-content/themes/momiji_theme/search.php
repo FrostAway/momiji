@@ -22,7 +22,7 @@
                     $query_split = explode("=", $string);
                     $search_query[$query_split[0]] = urldecode($query_split[1]);
                 }
-                $search_query['posts_per_page'] = 3;
+                $search_query['posts_per_page'] = 9;
                 $search_query['post_type'] = 'post';
                 $search_query['orderby'] = 'date';
                 $search_query['order'] = 'desc';

@@ -315,6 +315,7 @@ h4.content-title a:hover {
 }
 .list-box .box .box-main .box-post .thumbnail {
   width: 107px;
+  height: 105px;
   float: left;
 }
 .list-box .box .box-main .box-post .thumbnail:hover {
@@ -324,7 +325,7 @@ h4.content-title a:hover {
 }
 .list-box .box .box-main .box-post .thumbnail img {
   width: 107px;
-  height: 100px;
+  height: 105px;
 }
 .list-box .box .box-main .box-post .box-content {
   width: 183px;

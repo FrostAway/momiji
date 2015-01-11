@@ -6,16 +6,20 @@
         <div id="main-content">
             <ul class="list-box">
                 
-                <?php $home_posts = new WP_Query('showposts=1&cat=4&offset=1'); ?>
-                <?php while ($home_posts->have_posts()): $home_posts->the_post(); ?>
                 
-                <li class="box">
-                    <div class="bar">
-
-                    </div>
+                <?php $home_cats = array(get_option('home-cat1'), get_option('home-cat2'), get_option('home-cat3'), get_option('home-cat4')); ?>
+                <?php foreach ($home_cats as $cat_id){ ?>
+                
+                    <li class="box">
+                    <div class="bar"></div>
                     <div class="box-main">
                         <div class="above">
-                            <h3 class="box-title"><a href="<?php echo get_category_link(4) ?>"><?php echo get_cat_name(4); ?></a></h3>
+                            <?php 
+                            query_posts(array('showposts'=>1, 'cat'=>$cat_id, 'orderby'=>'post_date', 'order'=>'desc'));
+                            while(have_posts()): the_post();  
+                            $postid = $post->ID;
+                            ?>
+                            <h3 class="box-title"><a href="<?php echo get_category_link($cat_id) ?>"><?php echo get_cat_name($cat_id) ?></a></h3>
                             <div class="box-post">
                                 <div class="thumbnail">
                                     <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("medium") ?></a>
@@ -23,131 +27,26 @@
                                 <div class="box-content">
                                     <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title() ?></h4></a>
                                     <div class="time"><?php the_time('F j, Y') ?></div>
-                                    <p><?php echo my_excerpt(26); ?></p>
+                                    <p><?php echo my_excerpt(15); ?></p>
                                     
                                 </div>
                             </div>
+                            <?php    endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="box-meta">
                             <ul>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
+                                <?php query_posts(array('showposts'=>4, 'cat'=>$cat_id)) ?>
+                                <?php while(have_posts()): the_post(); ?>
+                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
                             </ul>
                         </div>
-                        <a href="#" class="more-footer">Xem thêm</a>
+                        <a href="<?php echo get_category_link($cat_id) ?>" class="more-footer">Xem thêm</a>
                     </div>
-                </li>
+                    </li>
                 
-                <?php endwhile; wp_reset_postdata(); ?>
+                <?php } ?>
                 
-                <?php $home_posts = new WP_Query('showposts=1&cat=4&offset=1'); ?>
-                <?php while ($home_posts->have_posts()): $home_posts->the_post(); ?>
-                
-                <li class="box">
-                    <div class="bar">
-
-                    </div>
-                    <div class="box-main">
-                        <div class="above">
-                           <h3 class="box-title"><a href="<?php the_permalink() ?>"><?php echo get_cat_name(4); ?></a></h3>
-                            <div class="box-post">
-                                <div class="thumbnail">
-                                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("medium") ?></a>
-                                </div>
-                                <div class="box-content">
-                                    <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title() ?></h4></a>
-                                    <div class="time"><?php the_time('F j, Y') ?></div>
-                                    <p><?php echo my_excerpt(26); ?></p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-meta">
-                            <ul>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="more-footer">Xem thêm</a>
-                    </div>
-                </li>
-                
-                <?php endwhile; wp_reset_postdata(); ?>
-                <?php $home_posts = new WP_Query('showposts=1&cat=4&offset=1'); ?>
-                <?php while ($home_posts->have_posts()): $home_posts->the_post(); ?>
-                
-                <li class="box">
-                    <div class="bar">
-
-                    </div>
-                    <div class="box-main">
-                        <div class="above">
-                            <h3 class="box-title"><a href="<?php the_permalink() ?>"><?php echo get_cat_name(4); ?></a></h3>
-                            <div class="box-post">
-                                <div class="thumbnail">
-                                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("small") ?></a>
-                                </div>
-                                <div class="box-content">
-                                    <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title() ?></h4></a>
-                                    <div class="time"><?php the_time('F j, Y') ?></div>
-                                    <p><?php echo my_excerpt(26); ?></p>
-                                    <!--<div class="read-more"><a href="<?php// the_permalink() ?>">Xem thêm</a></div>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-meta">
-                            <ul>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                        <a href="#" class="more-footer">Xem thêm</a>
-                    </div>
-                </li>
-                
-                <?php endwhile; wp_reset_postdata(); ?>
-                <?php $home_posts = new WP_Query('showposts=1&cat=4&offset=1'); ?>
-                <?php while ($home_posts->have_posts()): $home_posts->the_post(); ?>
-                
-                <li class="box">
-                    <div class="bar">
-
-                    </div>
-                    <div class="box-main">
-                        <div class="above">
-                            <h3 class="box-title"><a href="<?php the_permalink() ?>"><?php echo get_cat_name(4); ?></a></h3>
-                            <div class="box-post">
-                                <div class="thumbnail">
-                                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("medium") ?></a>
-                                </div>
-                                <div class="box-content">
-                                    <a href="<?php the_permalink() ?>"><h4 class="content-title"><?php the_title() ?></h4></a>
-                                    <div class="time"><?php the_time('F j, Y') ?></div>
-                                    <p><?php echo my_excerpt(26); ?></p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-meta">
-                            <ul>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="#">Những khó khăn khi duc học tại nhật bản</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="more-footer">Xem thêm</a>
-                    </div>
-                </li>
-                
-                <?php endwhile; wp_reset_postdata(); ?>
             </ul>
         </div>
         <!-- End list - box main -->

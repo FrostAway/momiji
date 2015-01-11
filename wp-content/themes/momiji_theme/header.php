@@ -65,11 +65,11 @@
             <div id="box-slide">
                     <div id="slide">
                         <ul>
-                            <li id="img1"><a><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/anh-slide-09.jpg" /></a></li>
-                            <li id="img2"><a><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/slide2.jpg" /></a></li>
-                            <li id="img3"><a><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/slide3.jpg" /></a></li>
-                            <li id="img4"><a><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/slide4.jpg" /></a></li>
-                            <li id="img5"><a><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/slide5.jpg" /></a></li>
+                            <li id="img1"><a><img src="<?php echo get_option('slide-img1') ?>" /></a></li>
+                            <li id="img2"><a><img src="<?php echo get_option('slide-img2') ?>" /></a></li>
+                            <li id="img3"><a><img src="<?php echo get_option('slide-img3') ?>" /></a></li>
+                            <li id="img4"><a><img src="<?php echo get_option('slide-img4') ?>" /></a></li>
+                            <li id="img5"><a><img src="<?php echo get_option('slide-img5') ?>" /></a></li>
                         </ul>
                         <a class="prev"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/dau-trai-phai-truoc-22.png" /></a>
                         <a class="next"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/dau-trai-phai-truoc-23.png" /></a>
