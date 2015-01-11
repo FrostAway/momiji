@@ -1,26 +1,43 @@
 <div id="right-bar">
             <h3 class="bar-title">Tìm kiếm ra trường</h3>
+            
+            <?php 
+            $taxonomies = get_terms('university', array('parent'=>0));
+            ?>
+            
+            
             <div class="advance-serch">
-                <form class="search-form">
+                <form class="search-form" method="get" action="<?php echo home_url() ?>/?page_id=47">
                     <label>Thành phố</label>
                     <div class="form-select">
-                        <select>
-                            <option>Tokyo</option>
+                        <select name="city" id="city">
+                            <?php
+                            if($taxonomies){
+                                foreach ($taxonomies as $term){ ?>
+                                    <option value="<?php echo $term->term_id ?>"><?php echo $term->name ?></option>
+                                <?php }
+                            }
+                            ?>
                         </select>
                         <div class="dropdown"></div>
                     </div>
-                    <label>Ngành</label>
-                    <div class="form-select">
-                        <select>
-                            <option>Thiết kế đồ họa</option>
-                        </select>
-                        <div class="dropdown"></div>
-                    </div>
+                    
+                    <?php $univers = get_terms('university', array('parent'=>22)); ?>
+                    
                     <label>Tên trường</label>
                     <div class="form-select">
-                        <select>
-                            <option>ĐH Tokyo</option>
+                        <select name="university" id="university">
+                            
                         </select>
+                        <div class="dropdown"></div>
+                    </div>
+                    
+                    <label>Ngành</label>
+                    <div class="form-select">
+<!--                        <select>
+                            <option>Thiết kế đồ họa</option>
+                        </select>-->
+                        <input type="text" name="s" value="" placeholder="Ngành" />
                         <div class="dropdown"></div>
                     </div>
                     <input type="submit" value="Tìm kiếm" />

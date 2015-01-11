@@ -15,9 +15,9 @@
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $query_args = explode("&", $query_string);
+                echo get_query_var('university');
                 
                 $search_query = array();
-
                 foreach ($query_args as $key => $string) {
                     $query_split = explode("=", $string);
                     $search_query[$query_split[0]] = urldecode($query_split[1]);

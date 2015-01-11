@@ -419,7 +419,7 @@ h4.content-title a:hover {
   height: 33px;
   width: 45px;
 }
-#right-bar .search-form select {
+#right-bar .search-form select, #right-bar .search-form input[type="text"] {
   width: 100%;
   height: 33px;
   border: none;
@@ -449,6 +449,7 @@ h4.content-title a:hover {
   color: #fff;
   font-style: italic;
   float: right;
+  cursor: pointer;
 }
 #right-bar .search-form input[type="submit"]:hover {
   background: #ce3000;
