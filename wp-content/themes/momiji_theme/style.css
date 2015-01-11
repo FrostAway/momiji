@@ -5,7 +5,11 @@
 }
 @font-face {
   font-family: utm;
-  src: url('asset/source/font/UTM Dax.ttf'), url('asset/source/font/UTM Bebas.ttf');
+  src: url('asset/source/font/UTM Dax.ttf');
+}
+@font-face{
+    font-family: utm-beba;
+    src: url('asset/source/font/UTM Bebas.ttf');
 }
 body {
   font-family: utm;
@@ -216,16 +220,16 @@ img {
   width: 240px;
   height: 62px;
   margin: 4.5px auto 4px auto;
-  text-align: right;
+  text-align: left;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 #box-slide #slide-bar ul li a {
   display: block;
-  padding: 6px 25px 0 0;
+  padding: 6px 0px 0 25px;
   text-transform: uppercase;
-  font-family: "UTM Bebas";
+  font-family: utm-beba;
   font-size: 29px;
 }
 #box-slide #slide-bar ul li:hover {
@@ -415,7 +419,7 @@ h4.content-title a:hover {
   position: absolute;
   top: 0px;
   right: 0;
-  background: url(asset/source/body/mui-ten-xuong-cot-ben-phai-truoc-27.png) no-repeat;
+  
   height: 33px;
   width: 45px;
 }
@@ -599,16 +603,16 @@ h4.content-title a:hover {
 #single .list-box li.box-main .box-content {
   position: absolute;
   top: 225px;
-  padding: 15px 12px 12px 12px;
+  padding: 21px 12px 12px 12px;
   background: #f4f4f4;
-  min-height: 200px;
+  min-height: 200px; width: 90%;
   transition: top 1s;
   -moz-transition: top 1s;
   -webkit-transition: top 1s;
 }
 #news .list-box li.box-main .box-content p,
 #single .list-box li.box-main .box-content p {
-  margin: 15px 0 0;
+  margin: 7px 0 0;
   text-align: justify;
   font-size: 13px;
 }
@@ -632,7 +636,7 @@ h4.content-title a:hover {
 #single .list-box li.box-main .view {
   position: absolute;
   right: 11px;
-  top: 20px;
+  top: 7px;
   font-family: "Segoe UI Semilinght";
   font-size: 14px;
 }

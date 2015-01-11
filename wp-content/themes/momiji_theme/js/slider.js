@@ -27,7 +27,7 @@ $(document).ready(function () {
     }
 
     interval = setInterval(slide, 6000);
-    $("#slide, #slide-bar").mouseenter(function () {
+    $("#slide, #slide-bar").mouseover(function () {
         clearInterval(interval);
     });
     $("#slide, #slide-bar").mouseleave(function () {

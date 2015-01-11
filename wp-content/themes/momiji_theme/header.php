@@ -65,11 +65,11 @@
             <div id="box-slide">
                     <div id="slide">
                         <ul>
-                            <li id="img1"><a><img src="<?php echo get_option('slide-img1') ?>" /></a></li>
-                            <li id="img2"><a><img src="<?php echo get_option('slide-img2') ?>" /></a></li>
-                            <li id="img3"><a><img src="<?php echo get_option('slide-img3') ?>" /></a></li>
-                            <li id="img4"><a><img src="<?php echo get_option('slide-img4') ?>" /></a></li>
-                            <li id="img5"><a><img src="<?php echo get_option('slide-img5') ?>" /></a></li>
+                            <li id="img1"><a href="<?php echo get_option('link-to1') ?>"><img src="<?php echo get_option('slide-img1') ?>" /></a></li>
+                            <li id="img2"><a href="<?php echo get_option('link-to2')  ?>"><img src="<?php echo get_option('slide-img2') ?>" /></a></li>
+                            <li id="img3"><a href="<?php echo get_option('link-to3') ?>"><img src="<?php echo get_option('slide-img3') ?>" /></a></li>
+                            <li id="img4"><a href="<?php echo get_option('link-to4') ?>"><img src="<?php echo get_option('slide-img4') ?>" /></a></li>
+                            <li id="img5"><a href="<?php echo get_option('link-to5') ?>"><img src="<?php echo get_option('slide-img5') ?>" /></a></li>
                         </ul>
                         <a class="prev"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/dau-trai-phai-truoc-22.png" /></a>
                         <a class="next"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/slide/dau-trai-phai-truoc-23.png" /></a>
@@ -85,11 +85,11 @@
                     </div>
                     <div id="slide-bar">
                         <ul>
-                            <li class="slide1" ><a onclick="hoverSlide(1)"  href="">Tuyển sinh</a></li>
-                            <li class="slide2" ><a onclick="hoverSlide(2)" href="">Tu nghiệp sinh</a></li>
-                            <li class="slide3" ><a onclick="hoverSlide(3)" href="">Đào tạo tiếng nhật</a></li>
-                            <li class="slide4" ><a onclick="hoverSlide(4)" href="">Giới thiệu việc làm</a></li>
-                            <li class="slide5" ><a onclick="hoverSlide(5)" href="">Hội thảo du học</a></li>
+                            <li class="slide1" ><a onclick="hoverSlide(1)" href=""><?php echo get_option('link-title1') ?></a></li>
+                            <li class="slide2" ><a onclick="hoverSlide(2)" href=""><?php echo get_option('link-title2') ?></a></li>
+                            <li class="slide3" ><a onclick="hoverSlide(3)" href=""><?php echo get_option('link-title3') ?></a></li>
+                            <li class="slide4" ><a onclick="hoverSlide(4)" href=""><?php echo get_option('link-title4') ?></a></li>
+                            <li class="slide5" ><a onclick="hoverSlide(5)" href=""><?php echo get_option('link-title5') ?></a></li>
                         </ul>
                     </div>
                 </div>

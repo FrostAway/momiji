@@ -19,30 +19,36 @@
                             }
                             ?>
                         </select>
-                        <div class="dropdown"></div>
+                        <div class="dropdown"><img src="<?php echo get_template_directory_uri() ?>/asset/source/body/mui-ten-xuong-cot-ben-phai-truoc-27.png" /></div>
                     </div>
                     
-                    <?php $univers = get_terms('university', array('parent'=>22)); ?>
+                    <?php $univers = get_terms('university', array('parent'=>24)); ?>
                     
                     <label>Tên trường</label>
                     <div class="form-select">
                         <select name="university" id="university">
-                            
+                            <?php foreach ($univers as $term){ ?>
+                            <option value="<?php echo $term->term_id ?>"><?php echo $term->name ?></option>
+                            <?php } ?>
                         </select>
-                        <div class="dropdown"></div>
+                        <div class="dropdown"><img src="<?php echo get_template_directory_uri() ?>/asset/source/body/mui-ten-xuong-cot-ben-phai-truoc-27.png" /></div>
                     </div>
-                    
+       
                     <label>Ngành</label>
                     <div class="form-select">
-<!--                        <select>
-                            <option>Thiết kế đồ họa</option>
-                        </select>-->
                         <input type="text" name="s" value="" placeholder="Ngành" />
-                        <div class="dropdown"></div>
                     </div>
                     <input type="submit" value="Tìm kiếm" />
                     <div class="clear"></div>
                 </form>
+                <script>
+                    jQuery(document).ready(function(){
+                       jQuery(".dropdown").click(function(){
+                           var select = jQuery(this).parent(".form-select").find("select");
+                           select.click();
+                       }) ;
+                    });
+                </script>
             </div>
 
             <div class="more-news">

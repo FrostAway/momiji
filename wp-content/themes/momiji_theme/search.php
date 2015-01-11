@@ -15,17 +15,18 @@
 
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $query_args = explode("&", $query_string);
-                echo get_query_var('university');
                 
                 $search_query = array();
-                foreach ($query_args as $key => $string) {
-                    $query_split = explode("=", $string);
-                    $search_query[$query_split[0]] = urldecode($query_split[1]);
-                }
+                $search_query['s'] = get_query_var('s');
                 $search_query['posts_per_page'] = 9;
                 $search_query['post_type'] = 'post';
                 $search_query['orderby'] = 'date';
                 $search_query['order'] = 'desc';
+                
+                if(isset($_GET['university'])){
+                    $search_query['tax_query'] = array('taxonomy'=> 'university', 'terms'=>  get_query_var('university'), 'field'=>'term_id');
+                }
+                
                 query_posts($search_query);
                 
                 global $wp_query;
@@ -33,7 +34,7 @@
             
             <div id="main-content" class="box-sizing">
                 <a href=""><h3 class="box-title">Tìm kiếm</h3></a>
-                <p class="key">Từ khóa: "<?php echo get_query_var('s'); ?>" . HIển thị <?php echo $wp_query->found_posts; ?> kết quả</p>
+                <p class="key">Từ khóa: "<?php echo get_query_var('s'); ?>" . HIển thị <?php echo $wp_query->found_posts; ?> kết quả  <?php if(isset($_GET['university'])){echo 'Trong mục: University';} ?></p>
 <!--                <p class="key">Sắp xếp theo</p>
                 <div class="form-select">
                     <select>

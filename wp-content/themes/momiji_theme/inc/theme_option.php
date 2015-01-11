@@ -2,7 +2,7 @@
 // theme option
 // theme option
 add_action('admin_menu', function() {
-    add_theme_page('Momiji Theme Option', 'Display Opiton', 'manage_options', 'momiji-them-option', 'home_page_setting');
+    add_theme_page('Momiji Theme Option', 'Hiển thị trang chủ', 'manage_options', 'momiji-them-option', 'home_page_setting');
     // ten hien thi         hien thi menu     nguoi co quyen    id ten                ham setting
 });
 add_action('admin_init', function() {
@@ -10,13 +10,25 @@ add_action('admin_init', function() {
     register_setting('home-page-group', 'home-cat2');
     register_setting('home-page-group', 'home-cat3');
     register_setting('home-page-group', 'home-cat4');
+    register_setting('home-page-group', 'home-cat5');
     // slide
-
     register_setting('home-page-group', 'slide-img1');
     register_setting('home-page-group', 'slide-img2');
     register_setting('home-page-group', 'slide-img3');
     register_setting('home-page-group', 'slide-img4');
     register_setting('home-page-group', 'slide-img5');
+    
+    register_setting('home-page-group', 'link-to1');
+    register_setting('home-page-group', 'link-to2');
+    register_setting('home-page-group', 'link-to3');
+    register_setting('home-page-group', 'link-to4');
+    register_setting('home-page-group', 'link-to5');
+    
+    register_setting('home-page-group', 'link-title1');
+    register_setting('home-page-group', 'link-title2');
+    register_setting('home-page-group', 'link-title3');
+    register_setting('home-page-group', 'link-title4');
+    register_setting('home-page-group', 'link-title5');
 });
 
 function home_page_setting() {
@@ -27,76 +39,39 @@ function home_page_setting() {
         <h2>Display Option</h2>
         <form id="home_page_setting" method="post" action="options.php">
             <?php settings_fields('home-page-group'); ?>
-            <h3>Select Category show in Home page</h3>
-
-            <select name="home-cat1">
+            <h3>Chọn thể loại hiển thị trên trang chủ</h3>
+            <?php for ($i=1; $i<=4; $i++){ ?>
+            <select name="home-cat<?php echo $i ?>">
                 <?php foreach ($categories as $cat) { ?>
                     <?php
                     $select = '';
-                    if ($cat->term_id == get_option('home-cat1'))
+                    if ($cat->term_id == get_option('home-cat'.$i))
                         $select = 'selected';
                     ?>
                     <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
                 <?php } ?>
             </select>
-            <select name="home-cat2">
-                <?php foreach ($categories as $cat) { ?>
-                    <?php
-                    $select = '';
-                    if ($cat->term_id == get_option('home-cat2'))
-                        $select = 'selected';
-                    ?>
-                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
-                <?php } ?>
-            </select>
-            <select name="home-cat3">
-                <?php foreach ($categories as $cat) { ?>
-                    <?php
-                    $select = '';
-                    if ($cat->term_id == get_option('home-cat3'))
-                        $select = 'selected';
-                    ?>
-                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
-                <?php } ?>
-            </select>
-            <select name="home-cat4">
-                <?php foreach ($categories as $cat) { ?>
-                    <?php
-                    $select = '';
-                    if ($cat->term_id == get_option('home-cat4'))
-                        $select = 'selected';
-                    ?>
-                    <option <?php echo $select; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name ?></option>
-                <?php } ?>
-            </select>
-
+            <?php } ?>
+            
             <hr />
-            <h3>Select Image Slide</h3>
-            <div style="margin:10px;">
-                <label style="float:left; margin: 5px 5px 0 0;">Image 1:</label>
-                <input type="text" id="image_1" name="slide-img1" value="<?php echo get_option('slide-img1') ?>" style="width: 550px; float:left; margin:0 5px;"/>
-                <input id="_btn" onclick="upload_image(1)" class="upload_image_button" type="button" value="Upload Image" />
+            <h3>Chọn ảnh hiển thị Slide</h3>
+            <?php for ($i=1; $i<=5; $i++){ ?>
+            <div style="margin:10px; float: left;" >
+                <label style="float:left; margin: 5px 5px 0 0;">Ảnh <?php echo $i ?>:</label>
+                <input type="text" id="image_<?php echo $i ?>" name="slide-img<?php echo $i ?>" value="<?php echo get_option('slide-img'.$i) ?>" style="width: 350px; float:left; margin:0 5px;"/>
+                <input id="_btn" onclick="upload_image(<?php echo $i ?>)" class="upload_image_button" type="button" value="Upload" />
             </div>
-            <div style="margin:10px;">
-                <label style="float:left; margin: 5px 5px 0 0;">Image 2:</label>
-                <input type="text" id="image_2" name="slide-img2" value="<?php echo get_option('slide-img2') ?>" style="width: 550px; float:left; margin:0 5px;"/>
-                <input id="_btn" onclick="upload_image(2)" class="upload_image_button" type="button" value="Upload Image" />
+            <div style="margin:10px; float: left;">
+                <label>Title: </label>
+                <input type="text" value="<?php echo get_option('link-title'.$i) ?>" name="link-title<?php echo $i ?>" placeholder="Tiêu đề" />
             </div>
-            <div style="margin:10px;">
-                <label style="float:left; margin: 5px 5px 0 0;">Image 3:</label>
-                <input type="text" id="image_3" name="slide-img3" value="<?php echo get_option('slide-img3') ?>" style="width: 550px; float:left; margin:0 5px;"/>
-                <input id="_btn" onclick="upload_image(3)" class="upload_image_button" type="button" value="Upload Image" />
+            <div style="margin:10px; float: left;">
+                <label>Link đến: </label>
+                <input type="text" name="link-to<?php echo $i ?>" value="<?php echo get_option('link-to'.$i) ?>" style="width: 300px;" />
             </div>
-            <div style="margin:10px;">
-                <label style="float:left; margin: 5px 5px 0 0;">Image 4:</label>
-                <input type="text" id="image_4" name="slide-img4" value="<?php echo get_option('slide-img4') ?>" style="width: 550px; float:left; margin:0 5px;"/>
-                <input id="_btn" onclick="upload_image(4)" class="upload_image_button" type="button" value="Upload Image" />
-            </div>
-            <div style="margin:10px;">
-                <label style="float:left; margin: 5px 5px 0 0;">Image 5:</label>
-                <input type="text" id="image_5" name="slide-img5" value="<?php echo get_option('slide-img5') ?>" style="width: 550px; float:left; margin:0 5px;"/>
-                <input id="_btn" onclick="upload_image(5)" class="upload_image_button" type="button" value="Upload Image" />
-            </div>
+            <div style="clear: both"></div>
+            <?php } ?>
+
 
             <?php add_thickbox(); ?>
             <script>

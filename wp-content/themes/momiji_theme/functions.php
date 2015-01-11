@@ -190,9 +190,10 @@ function ajax_load_search_form() {
     ?>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
-            $("#city").change(function () {
-                var term_id = $(this).val();
-                $.ajax({
+            var term_id = jQuery("#city").val();
+            jQuery("#city").change(function () {
+                term_id = jQuery(this).val();
+                jQuery.ajax({
                     type: 'POST',
                     url: '<?php echo admin_url('admin-AJAX.php') ?>',
                     dataType: 'json',
@@ -228,4 +229,28 @@ function load_search_form() {
         die();
     }
 }
+
+// advanced search
+function advanced_search_query($query) {
+ 
+    if($query->is_search()) {
+         
+        if(isset($_GET['university'])){
+            $taxquery = array(
+              array(
+                  'taxonomy' => 'university',
+                  'field' => 'id',
+                  'terms' => $_GET['university'],
+              )  
+            );
+            $query->set('tax_query', $taxquery);
+        }    
+        return $query;
+    }
+ 
+}
+add_action('pre_get_posts', 'advanced_search_query', 1000);
+
+
+
 ?>
