@@ -20,13 +20,13 @@
                     </div>
                     <div class="bar-author">
                         <h4>Quản lý</h4>
-                        <h4 class="author-name">Momiji</h4>
+                        <h4 class="author-name"><?php echo get_option('blogname') ?></h4>
                         <div class="author-info">
                             <div class="avatar">
-                                <a href="<?php the_author_link() ?>"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/footer/anh-khach-45.png" /></a>
+                                <a href="<?php  ?>"><?php echo get_avatar(1, 74) ?></a>
                             </div>
                             <div class="info">
-                                Biên tập viên, chuyên viên marketing tại 4handy và biên tập viên tại Hotcourses Vietnam. Thích chó mèo và đồ handmade
+                                <?php echo get_the_author_meta('description', 1) ?>
                             </div>
                         </div>
                     </div>
@@ -34,6 +34,7 @@
                 <div class="post-content">
                     
                     <h4 class="box-content">Liên hệ</h4>
+                    <a href="single.php"></a>
                     <form method="post" action="" class="data-form">
                         
                         <label>Họ tên: </label>

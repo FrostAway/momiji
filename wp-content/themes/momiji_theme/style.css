@@ -15,7 +15,14 @@ body {
   font-family: utm;
   font-size: 14px;
   background: #f4e7d7;
+  position: relative;
 }
+.message-succ, .message-error{
+    position: absolute; top: 5px; left: 178px; padding: 5px 10px;
+    border: 1px solid #0000ff; 
+}
+.message-succ{background: #c6e3f5;}
+.message-error{background: #ffc1c1;}
 ul,
 ol {
   list-style: none;

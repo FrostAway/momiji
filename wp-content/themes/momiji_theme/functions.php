@@ -148,13 +148,13 @@ function posts_custom_column_views($column_name, $id) {
 
 if (isset($_POST['contact-submit'])) {
     $contact = $_POST['contact'];
-
+    
     if (wp_mail($contact['email'], $contact['subject'], $contact['content'])) {
-        echo 'Đã gửi liên hệ của bạn';
+        echo '<p class="message-succ">Ä�Ã£ gá»­i liÃªn há»‡ cá»§a báº¡n</p>';
         wp_redirect(home_url());
         exit();
     } else {
-        echo 'Có lỗi xảy ra';
+        echo '<p class="message-error">CÃ³ lá»—i xáº£y ra</p>';
     }
 }
 
@@ -195,7 +195,7 @@ function ajax_load_search_form() {
                 term_id = jQuery(this).val();
                 jQuery.ajax({
                     type: 'POST',
-                    url: '<?php echo admin_url('admin-AJAX.php') ?>',
+                    url: '<?php echo admin_url('admin-ajax.php') ?>',
                     dataType: 'json',
                     data: {
                         action: 'load_search_form',
@@ -227,29 +227,10 @@ function load_search_form() {
         $univers = get_terms('university', array('parent' => $term_id));
         echo json_encode($univers);
         die();
-    }
+    }else{
+		echo '';
+	}
 }
-
-// advanced search
-function advanced_search_query($query) {
- 
-    if($query->is_search()) {
-         
-        if(isset($_GET['university'])){
-            $taxquery = array(
-              array(
-                  'taxonomy' => 'university',
-                  'field' => 'id',
-                  'terms' => $_GET['university'],
-              )  
-            );
-            $query->set('tax_query', $taxquery);
-        }    
-        return $query;
-    }
- 
-}
-add_action('pre_get_posts', 'advanced_search_query', 1000);
 
 
 
