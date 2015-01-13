@@ -10,7 +10,7 @@
                 <form class="search-form" method="get" action="<?php echo home_url() ?>/?page_id=47">
                     <label>Thành phố</label>
                     <div class="form-select">
-                        <select name="city" id="city">
+                        <select class="select" name="city" id="city">
                             <?php
                             if($taxonomies){
                                 foreach ($taxonomies as $term){ ?>
@@ -26,7 +26,7 @@
                     
                     <label>Tên trường</label>
                     <div class="form-select">
-                        <select name="university" id="university">
+                        <select class="select" name="university" id="university">
                             <?php foreach ($univers as $term){ ?>
                             <option value="<?php echo $term->term_id ?>"><?php echo $term->name ?></option>
                             <?php } ?>
@@ -43,9 +43,9 @@
                 </form>
                 <script>
                     jQuery(document).ready(function(){
-                       jQuery(".dropdown").click(function(){
-                           var select = jQuery(this).parent(".form-select").find("select");
-                           select.click();
+                       jQuery(".dropdown").bind("click", function(){
+                           var select = jQuery(this).parent(".form-select").find(".select option");
+                           jQuery("#logo").click();
                        }) ;
                     });
                 </script>

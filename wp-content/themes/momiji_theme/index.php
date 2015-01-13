@@ -35,7 +35,7 @@
                         </div>
                         <div class="box-meta">
                             <ul>
-                                <?php query_posts(array('showposts'=>4, 'cat'=>$cat_id)) ?>
+                                <?php query_posts(array('showposts'=>4, 'cat'=>$cat_id, 'offset'=>1)) ?>
                                 <?php while(have_posts()): the_post(); ?>
                                 <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/dau-cham-19.png" /> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
                                 <?php endwhile; ?>

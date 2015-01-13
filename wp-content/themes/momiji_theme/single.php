@@ -6,7 +6,7 @@
         <div id="content">
             
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
+            <?php $postid = get_the_ID(); ?>
            
             <div id="main-content" class="box-sizing">
                 <h3 class="box-title"><a href="<?php echo get_category_link(get_the_category()[0]->term_id) ?>"><?php echo get_the_category()[0]->cat_name ?></a></h3>
@@ -36,7 +36,7 @@
                     <h4 class="box-content"><?php the_title(); ?></h4>
 			
 			<div class="post-meta">
-                            <img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/icon-60.png" /> <span>24 tháng 12 2012</span>
+                            <img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/icon-60.png" /> <span><?php the_time('F j, Y'); ?></span>
                         </div>
                         <?php the_excerpt() ?>
 			<div class="post-body">
@@ -46,17 +46,26 @@
 			<?php //edit_post_link('Edit this entry','','.'); ?>
 			<div class="more-post">
                         <ul>
-                            <li><a href="">>> Học thiết kế thời trang cao cấp ở ModArt Paris</a></li>
-                            <li><a href="">>> Hoc kinh doanh thời trang tại Singapore</a></li>
-                            <li><a href="">>> Học thiết kế thời trang tại thành phố của những trái tim nghệ sĩ, Meibourne</a></li>
-                            <li><a href="">>> Học thời trang ở London. Đi thực tế 2 lần/tuần</a></li>
+                            <?php
+                            $categories = get_the_category();
+                            $cats_id = array();
+                            foreach ($categories as $cat){
+                                $cats_id[] = $cat->term_id;
+                            }
+                            query_posts(array('showposts'=>4, 'category__in'=>$cats_id, 'post__not_in'=>array($postid)));
+                            if(have_posts()): while(have_posts()): the_post();
+                            ?>
+                            <li><a href="<?php the_permalink() ?>">>> <?php the_title(); ?></a></li>
+                            <?php endwhile; else: ?>
+                            <li>No post in this category</li>
+                            <?php endif; ?>
                         </ul>
                         </div>
 		</div>
 
                     <?php //comments_template(); ?>
 
-                <?php endwhile; endif; ?>
+                <?php break; endwhile; endif; ?>
                     
                 </div>
 
