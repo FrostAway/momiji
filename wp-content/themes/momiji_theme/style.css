@@ -724,6 +724,12 @@ h4.content-title a:hover {
   margin-bottom: 32px;
   margin-top: 30px;
 }
+#single #main-content .post-bar .post-thumbnail .attachment-post-thumbnail {
+    width: 225px; height: 225px;
+}
+#single #main-content .post-bar .post-thumbnail img {
+    width: 225px; height: 225px;
+}
 #single #main-content .post-bar .bar-author h4 {
   padding-bottom: 14px;
 }

@@ -76,7 +76,7 @@ function home_page_setting() {
             <?php add_thickbox(); ?>
             <script>
                 function upload_image(id) {
-                    tb_show('', 'media-upload.php?type=image&TB_iframe=true');
+                    tb_show('', 'media-upload.php?type=image&width=900&height=550&TB_iframe=true');
 
                     window.send_to_editor = function (html) {
                         imgurl = jQuery('img', html).attr('src');
@@ -84,7 +84,6 @@ function home_page_setting() {
                         tb_remove();
                     };
                 }
-
             </script>
 
             <?php submit_button(); ?>

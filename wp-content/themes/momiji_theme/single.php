@@ -38,7 +38,7 @@
 			<div class="post-meta">
                             <img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/icon-60.png" /> <span><?php the_time('F j, Y'); ?></span>
                         </div>
-                        <?php the_excerpt() ?>
+                        
 			<div class="post-body">
                             <?php the_content() ?>
                         </div>

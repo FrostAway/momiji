@@ -10,7 +10,7 @@
                 <div class="clear"></div>
                 <div class="post-bar">
                     <div class="post-thumbnail">
-                        <a href=""><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/body/anh-58.jpg" /></a>
+                        <?php the_post_thumbnail() ?>
                     </div>
                     <div class="bar-author">
                         <h4>Quản lý</h4>

@@ -66,43 +66,43 @@
         <div class="first-col">
             <h3 class="about-title">CÁC DỊCH VỤ CỦA CHÚNG TÔI</h3>
             <ul>
-                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-37.png" /><a href="#">Tư vấn du học</a></li>
-                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-38.png" /><a href="#">Đào tạo tiếng Nhật</a></li>
-                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-39.png" /><a href="#">Tư vấn việc làm</a></li>
-                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-40.png" /><a href="#">Tổ chức hội thảo du học</a></li>
+                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-37.png" /><a href="<?php echo home_url() ?>/tu-van-du-hoc-3">Tư vấn du học</a></li>
+                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-38.png" /><a href="<?php echo home_url() ?>/dao-tao-tieng-nhat">Đào tạo tiếng Nhật</a></li>
+                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-39.png" /><a href="<?php echo home_url() ?>/tu-van-viec-lam">Tư vấn việc làm</a></li>
+                <li><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-trai-40.png" /><a href="<?php echo home_url() ?>/to-chuc-hoi-thao-du-hoc">Tổ chức hội thảo du học</a></li>
             </ul>
         </div>
 
         <div class="second-col">
             <div class="bg-col">
-                <h3 class="about-title">CÁC DỊCH VỤ CỦA CHÚNG TÔI</h3>
+                <h3 class="about-title">LÝ DO NÊN CHỌN MOMIJI</h3>
                 <ul>
                     <li class="ft-box">
                         <div class="ft-icon"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-phai-41.png" /></div>
                         <div class="ft-content">
-                            <h3>UY TÍN</h3>
-                            <p>Khó khăn lớn nhất phải kể đến đới với du họ Nhật Bản, một nơi đắt đỏ nhất thế giưới là chi phí cao ...</p>
+                            <a href="<?php echo get_page_link(100) ?>"><h3>UY TÍN</h3></a>
+                            <p><?php echo my_content(25, 100) ?></p>
                         </div>
                     </li >
                     <li class="ft-box">
                         <div class="ft-icon"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-phai-43.png" /></div>
                         <div class="ft-content">
-                            <h3>TIẾT KIỆM</h3>
-                            <p>Khó khăn lớn nhất phải kể đến đới với du họ Nhật Bản, một nơi đắt đỏ nhất thế giưới là chi phí cao ...</p>
+                            <a href="<?php echo get_page_link(102) ?>"><h3>TIẾT KIỆM</h3></a>
+                            <p><?php echo my_content(25, 102) ?></p>
                         </div>
                     </li>
                     <li class="ft-box">
                         <div class="ft-icon"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-phai-42.png" /></div>
                         <div class="ft-content">
-                            <h3 class="ft-title">TẬN TÌNH</h3>
-                            <p>Khó khăn lớn nhất phải kể đến đới với du họ Nhật Bản, một nơi đắt đỏ nhất thế giưới là chi phí cao ...</p>
+                            <a href="<?php echo get_page_link(105) ?>"><h3>TẬN TÌNH</h3></a>
+                            <p><?php echo my_content(25, 105) ?></p>
                         </div>
                     </li>
                     <li class="ft-box">
                         <div class="ft-icon"><img src="<?php echo bloginfo('template_directory'); ?>/asset/source/under-banner/icon-ben-phai-44.png" /></div>
                         <div class="ft-content">
-                            <h3>CAM KẾT</h3>
-                            <p>Khó khăn lớn nhất phải kể đến đới với du họ Nhật Bản, một nơi đắt đỏ nhất thế giưới là chi phí cao ...</p>
+                            <a href="<?php echo get_page_link(107) ?>"><h3>CAM KẾT</h3></a>
+                            <p><?php echo my_content(25, 107) ?></p>
                         </div>
                     </li>
                 </ul>

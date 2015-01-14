@@ -101,6 +101,17 @@ function my_excerpt($limit) {
     $excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
     return $excerpt;
 }
+function my_content($limit, $post_id) {
+    $content = explode(' ', get_page($post_id)->post_content, $limit);
+    if (count($content) >= $limit) {
+        array_pop($content);
+        $content = implode(" ", $content) . '...';
+    } else {
+        $content = implode(" ", $content);
+    }
+    $content = preg_replace('`\[[^\]]*\]`', '', $content);
+    return $content;
+}
 
 // get and set post view
 
@@ -148,13 +159,14 @@ function posts_custom_column_views($column_name, $id) {
 
 if (isset($_POST['contact-submit'])) {
     $contact = $_POST['contact'];
-    
-    if (wp_mail($contact['email'], $contact['subject'], $contact['content'])) {
-        echo '<p class="message-succ">Ä�Ã£ gá»­i liÃªn há»‡ cá»§a báº¡n</p>';
+    $content = $contact['content']."\n\n".'Người gửi: '.$contact['name']."\n\n".$contact['email'];
+    $headers[] = 'From '.$contact['name'].' <'.$contact['email'].'>';
+    if (wp_mail(get_option('mailserver_login'), $contact['subject'], $content, $headers)) {
+        echo '<p class="message-succ">Đã gửi liên hệ thành công, Chúng tôi sẽ sớm hồi đáp</p>';
         wp_redirect(home_url());
         exit();
     } else {
-        echo '<p class="message-error">CÃ³ lá»—i xáº£y ra</p>';
+        echo '<p class="message-error">Có lỗi xảy ra vui lòng nhập lại</p>';
     }
 }
 
